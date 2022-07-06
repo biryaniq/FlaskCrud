@@ -6,7 +6,9 @@
 
   <div class="form">
     <form action="/update/{{task.id}}" method="POST">
-      <input type="text" name="content" id="content" value="{{task.content}}" />
+      <input type="text" name="name" id="name" value="{{task.name}}" />
+      <input type="text" name="role" id="role" value="{{task.role}}" />
+      <input type="text" name="number" id="number" value="{{task.number}}" />
       <input type="submit" value="Update" />
     </form>
   </div>
