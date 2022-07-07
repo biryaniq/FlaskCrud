@@ -11,6 +11,8 @@ class Contact(db.Model):
     name = db.Column(db.String(200), nullable=False)
     role = db.Column(db.String(200), nullable=False)
     number = db.Column(db.String(200), nullable=False)
+    cell = db.Column(db.String(200), nullable=False)
+    landline = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -23,10 +25,12 @@ def index():
         name = request.form['name']
         role = request.form['role']
         number = request.form['number']
-        print(name)
+        cell = request.form['cell']
+        landline = request.form['landline']
+        # print(name)
         # print(role)
         # print(number)
-        new_task = Contact(name=name, role=role, number=number)
+        new_task = Contact(name=name, role=role, number=number, cell=cell, landline=landline)
 
         try:
             db.session.add(new_task)
@@ -60,6 +64,8 @@ def update(id):
         task.name = request.form['name']
         task.role = request.form['role']
         task.number = request.form['number']
+        task.cell = request.form['cell']
+        task.landline = request.form['landline']
 
         try:
             db.session.commit()
