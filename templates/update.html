@@ -4,40 +4,40 @@
 <div class="content">
   <h1 style="text-align: center">Update Contact</h1>
   <div class="form">
-    <form action="/update/{{task.id}}" method="POST">
+    <form action="/update/{{contact.id}}" method="POST">
       <input
         type="text"
         name="name"
         id="name"
         placeholder="name"
-        value="{{task.name}}"
+        value="{{contact.name}}"
       />
       <input
         type="text"
         name="role"
         id="role"
         placeholder="role"
-        value="{{task.role}}"
+        value="{{contact.role}}"
       />
       <input
         type="text"
         name="number"
         id="number"
         placeholder="phone number"
-        value="{{task.number}}"
+        value="{{contact.number}}"
       />
       <input
         type="text"
         name="cell"
         id="cell"
         placeholder="cell"
-        value="{{task.cell}}"
+        value="{{contact.cell}}"
       />
       <input
         type="text"
         name="landline"
         id="landline"
-        value="{{task.landline}}"
+        value="{{contact.landline}}"
       />
       <input type="submit" value="Update" />
     </form>
