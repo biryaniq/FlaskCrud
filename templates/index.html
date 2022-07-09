@@ -3,7 +3,7 @@
 {% endblock %} {% block body %}
 <div class="content">
   <h1 style="text-align: center">Emergency Contacts</h1>
-  {% if tasks|length < 1 %}
+  {% if contacts|length < 1 %}
   <h4 style="text-align: center">Add your first emergency contact</h4>
   {% else %}
   <table>
@@ -13,17 +13,17 @@
       <th>Default Contact Number</th>
       <th>Actions</th>
     </tr>
-    {% for task in tasks %}
+    {% for contact in contacts %}
     <tr>
-      <td>{{ task.name }}</td>
-      <td>{{ task.role }}</td>
-      <td>{{ task.number }}</td>
-      <td>{{ task.cell }}</td>
-      <td>{{ task.landline }}</td>
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.role }}</td>
+      <td>{{ contact.number }}</td>
+      <td>{{ contact.cell }}</td>
+      <td>{{ contact.landline }}</td>
       <td>
-        <a href="/delete/{{task.id}}">Delete</a>
+        <a href="/delete/{{contact.id}}">Delete</a>
         <br />
-        <a href="/update/{{task.id}}">Update</a>
+        <a href="/update/{{contact.id}}">Update</a>
       </td>
     </tr>
     {% endfor %}

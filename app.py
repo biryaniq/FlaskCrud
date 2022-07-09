@@ -12,7 +12,7 @@ class Contact(db.Model):
     role = db.Column(db.String(200), nullable=False)
     number = db.Column(db.String(200), nullable=False)
     cell = db.Column(db.String(200), nullable=False)
-    landline = db.Column(db.String(200), nullable=False)
+    landline = db.Column(db.String(200), nullable=True)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
