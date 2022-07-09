@@ -5,10 +5,34 @@
   <h1 style="text-align: center">Update Contact</h1>
   <div class="form">
     <form action="/update/{{task.id}}" method="POST">
-      <input type="text" name="name" id="name" value="{{task.name}}" />
-      <input type="text" name="role" id="role" value="{{task.role}}" />
-      <input type="text" name="number" id="number" value="{{task.number}}" />
-      <input type="text" name="cell" id="cell" value="{{task.cell}}" />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="name"
+        value="{{task.name}}"
+      />
+      <input
+        type="text"
+        name="role"
+        id="role"
+        placeholder="role"
+        value="{{task.role}}"
+      />
+      <input
+        type="text"
+        name="number"
+        id="number"
+        placeholder="phone number"
+        value="{{task.number}}"
+      />
+      <input
+        type="text"
+        name="cell"
+        id="cell"
+        placeholder="cell"
+        value="{{task.cell}}"
+      />
       <input
         type="text"
         name="landline"

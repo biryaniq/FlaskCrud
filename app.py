@@ -30,10 +30,10 @@ def index():
         # print(name)
         # print(role)
         # print(number)
-        new_task = Contact(name=name, role=role, number=number, cell=cell, landline=landline)
+        new_contact = Contact(name=name, role=role, number=number, cell=cell, landline=landline)
 
         try:
-            db.session.add(new_task)
+            db.session.add(new_contact)
             db.session.commit()
             return redirect('/')
         except Exception as e:
@@ -41,16 +41,16 @@ def index():
             return 'There was an issue adding your contact'
 
     else:
-        tasks = Contact.query.order_by(Contact.date_created).all()
-        return render_template('index.html', tasks=tasks)
+        contacts = Contact.query.order_by(Contact.date_created).all()
+        return render_template('index.html', contacts=contacts)
 
 
 @app.route('/delete/<int:id>')
 def delete(id):
-    task_to_delete = Contact.query.get_or_404(id)
+    contact_to_delete = Contact.query.get_or_404(id)
 
     try:
-        db.session.delete(task_to_delete)
+        db.session.delete(contact_to_delete)
         db.session.commit()
         return redirect('/')
     except:
@@ -58,14 +58,14 @@ def delete(id):
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    task = Contact.query.get_or_404(id)
+    contact = Contact.query.get_or_404(id)
 
     if request.method == 'POST':
-        task.name = request.form['name']
-        task.role = request.form['role']
-        task.number = request.form['number']
-        task.cell = request.form['cell']
-        task.landline = request.form['landline']
+        contact.name = request.form['name']
+        contact.role = request.form['role']
+        contact.number = request.form['number']
+        contact.cell = request.form['cell']
+        contact.landline = request.form['landline']
 
         try:
             db.session.commit()
@@ -74,7 +74,7 @@ def update(id):
             return 'There was an issue updating your contact'
 
     else:
-        return render_template('update.html', task=task)
+        return render_template('update.html', contact=contact)
 
 
 if __name__ == "__main__":

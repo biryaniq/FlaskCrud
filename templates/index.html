@@ -10,10 +10,7 @@
     <tr>
       <th>Name</th>
       <th>Role</th>
-      <th>Phone</th>
-      <th>Cell</th>
-      <th>Landline</th>
-      <th>Added</th>
+      <th>Default Contact Number</th>
       <th>Actions</th>
     </tr>
     {% for task in tasks %}
@@ -23,7 +20,6 @@
       <td>{{ task.number }}</td>
       <td>{{ task.cell }}</td>
       <td>{{ task.landline }}</td>
-      <td>{{ task.date_created.date() }}</td>
       <td>
         <a href="/delete/{{task.id}}">Delete</a>
         <br />
@@ -38,11 +34,13 @@
     <form action="/" method="POST">
       <input type="text" name="name" id="name" placeholder="name" />
       <input type="text" name="role" id="role" placeholder="role" />
+      <div></div>
       <input type="text" name="number" id="number" placeholder="number" />
       <input type="text" name="cell" id="cell" placeholder="cell" />
       <input type="text" name="landline" id="landline" placeholder="landline" />
       <input type="submit" value="Add Contact" />
     </form>
+    <button>row</button>
   </div>
 </div>
 {% endblock %}
